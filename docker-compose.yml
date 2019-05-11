@@ -1,19 +1,19 @@
-version: "3.4"
+version: "4.1"
 services:
     nopcommerce_web:
         build: .
-        container_name: nopcommerce
+        container_name: hsdev_web
         ports:
             - "80:80"
         depends_on:
-            - nopcommerce_database
+            - hsdev_database
     nopcommerce_database:
         image: "microsoft/mssql-server-linux"
         container_name: nopcommerce_mssql_server
         environment:
-            SA_PASSWORD: "nopCommerce_db_password"
+            SA_PASSWORD: "265%Power"
             ACCEPT_EULA: "Y"
             MSSQL_PID: "Express"
 
 volumes:
-  nopcommerce_data:            
+  nopcommerce_data: "/c/nop-server"
